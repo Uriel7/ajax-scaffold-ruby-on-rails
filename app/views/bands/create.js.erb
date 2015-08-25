@@ -1,0 +1,10 @@
+<% if @band.errors.count == 0 %>
+  
+  $('#box').remove(); 
+  $('#new-band-link').show();
+  $('#bands .row').append('<%= j render("band", :band => @band) %>'); 
+  
+<% else %>
+  $('#box').remove();    
+  $('#new-band-link').after('<%= j render("form") %>');
+<% end %>
